@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       - name: Run tests
         run: |
           LATEST_LEAN=$(gh release list --repo leanprover/lean4 --limit 1 | awk '{print $1}')
