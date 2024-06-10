@@ -14,7 +14,7 @@ jobs:
       - name: Run tests
         run: |
           LATEST_LEAN=$(gh release list --repo leanprover/lean4 --limit 1 | awk '{print $1}')
-          echo "The latest release is: $LATEST_LEAN"
-          echo $LATEST_LEAN > lean-toolchain
+          echo "The latest release/prerelase is: $LATEST_LEAN"
+          echo "leanprover/lean4:$LATEST_LEAN" > lean-toolchain
         env:
           GH_TOKEN: ${{ github.token }}
