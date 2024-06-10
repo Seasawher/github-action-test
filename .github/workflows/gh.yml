@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run tests
         run: |
-          gh release list --repo leanprover/lean4 --limit 1 | awk '{print $1}'
-          exit 0
+          LATEST_LEAN = gh release list --repo leanprover/lean4 --limit 1 | awk '{print $1}'
+          echo $LATEST_LEAN > lean-toolchain
         env:
           GH_TOKEN: ${{ github.token }}
